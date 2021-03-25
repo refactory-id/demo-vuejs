@@ -1,0 +1,16 @@
+version: '3'
+services:
+  vue-demo:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8182:8080"
+    container_name: vue-demo
+    volumes:
+       - ./:/usr/src/app/
+       - /usr/src/app/node_modules
+    networks:
+       - net
+networks:
+  net:
